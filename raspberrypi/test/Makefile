@@ -8,7 +8,7 @@ BIN       = glestest
 # Platform specific definitions 
 VPATH     += ../
 CFLAGS    +=  -D_LINUX
-LIBS      += -L$(SDKSTAGE)/opt/vc/lib/ -lGLESv2 -lEGL -lopenmaxil -lbcm_host -lvcos -lvchiq_arm -lpthread -lrt 
+LIBS      += -L$(SDKSTAGE)/opt/vc/lib/ -lbrcmGLESv2 -lbrcmEGL -lopenmaxil -lbcm_host -lvcos -lvchiq_arm -lpthread -lrt 
 INCLUDES  += -I$(SDKSTAGE)/opt/vc/include -I$(SDKSTAGE)/opt/vc/include/interface/vcos/pthreads
 INCLUDES  += -I$(SDKSTAGE)/opt/vc/include/interface/vmcs_host/linux
 
