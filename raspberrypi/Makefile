@@ -22,7 +22,7 @@ CFLAGS     += -I$(SDKSTAGE)/opt/vc/include -I$(SDKSTAGE)/opt/vc/include/interfac
 CFLAGS     += -I$(SDKSTAGE)/opt/vc/include/interface/vmcs_host/linux
 
 LIBS       += -ldl -lpthread -lz
-LIBS       += -L$(SDKSTAGE)/opt/vc/lib/ -lGLESv2 -lEGL -lopenmaxil -lbcm_host -lvcos -lvchiq_arm  -lrt
+LIBS       += -L$(SDKSTAGE)/opt/vc/lib/ -lbrcmGLESv2 -lbrcmEGL -lopenmaxil -lbcm_host -lvcos -lvchiq_arm  -lrt
 
 # Dependencies
 ifeq ($(origin SDL_CFLAGS) $(origin SDL_LDLIBS), undefined undefined)
