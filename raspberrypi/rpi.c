@@ -158,11 +158,11 @@ int get_joystick(void) {
              }
           break;
           }
-		       case SDL_JOYHATMOTION: {
-			        if (event.jhat.value & SDL_HAT_UP) Back = JOY_ASIX_YM;
-			        if (event.jhat.value & SDL_HAT_DOWN) Back = JOY_ASIX_YP;
-			        if (event.jhat.value & SDL_HAT_LEFT) Back = JOY_ASIX_XM;
-			        if (event.jhat.value & SDL_HAT_RIGHT) Back = JOY_ASIX_XP;
+           case SDL_JOYHATMOTION: {
+              if (event.jhat.value & SDL_HAT_UP) Back = JOY_ASIX_YM;
+              if (event.jhat.value & SDL_HAT_DOWN) Back = JOY_ASIX_YP;
+              if (event.jhat.value & SDL_HAT_LEFT) Back = JOY_ASIX_XM;
+              if (event.jhat.value & SDL_HAT_RIGHT) Back = JOY_ASIX_XP;
           break;
           }             
         }
