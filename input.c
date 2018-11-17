@@ -857,7 +857,7 @@ gui_action_type get_gui_input()
               if (event.jhat.value & SDL_HAT_DOWN) action = joy_map(JOY_ASIX_YP);
               if (event.jhat.value & SDL_HAT_LEFT) action = joy_map(JOY_ASIX_XM);
               if (event.jhat.value & SDL_HAT_RIGHT) action = joy_map(JOY_ASIX_XP);
-			  }
+         }
         default:
            break;
      }
@@ -1010,18 +1010,18 @@ u32 update_input()
 
       case SDL_JOYHATMOTION:
       {	
-			      if (event.jhat.value & SDL_HAT_UP)  {
+            if (event.jhat.value & SDL_HAT_UP)  {
                newkey |= joy_map(JOY_ASIX_YM);
                newkey &= ~(joy_map(JOY_ASIX_YP));
             } else if (event.jhat.value & SDL_HAT_DOWN) {
-			         newkey &= ~(joy_map(JOY_ASIX_YM));
+               newkey &= ~(joy_map(JOY_ASIX_YM));
                newkey |= joy_map(JOY_ASIX_YP);
             } else {
                newkey &= ~(joy_map(JOY_ASIX_YM));
                newkey &= ~(joy_map(JOY_ASIX_YP));
             }
 			
-			      if (event.jhat.value & SDL_HAT_LEFT) {
+            if (event.jhat.value & SDL_HAT_LEFT) {
                newkey |= joy_map(JOY_ASIX_XM);
                newkey &= ~(joy_map(JOY_ASIX_XP));
             } else if (event.jhat.value & SDL_HAT_RIGHT) {
