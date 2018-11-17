@@ -852,7 +852,7 @@ gui_action_type get_gui_input()
                   else if (event.jaxis.value > TRESHOLD) action = joy_map(JOY_ASIX_YP);
             }
          }
-         case SDL_JOYAXISMOTION: {	  
+         case SDL_JOYHATMOTION: {	  
               if (event.jhat.value & SDL_HAT_UP) action = joy_map(JOY_ASIX_YM);
               if (event.jhat.value & SDL_HAT_DOWN) action = joy_map(JOY_ASIX_YP);
               if (event.jhat.value & SDL_HAT_LEFT) action = joy_map(JOY_ASIX_XM);
