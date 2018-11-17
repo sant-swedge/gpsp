@@ -851,7 +851,13 @@ gui_action_type get_gui_input()
                if (event.jaxis.value < -TRESHOLD) action = joy_map(JOY_ASIX_YM);
                   else if (event.jaxis.value > TRESHOLD) action = joy_map(JOY_ASIX_YP);
             }
-        }
+         }
+         case SDL_JOYAXISMOTION: {	  
+              if (event.jhat.value & SDL_HAT_UP) action = joy_map(JOY_ASIX_YM);
+              if (event.jhat.value & SDL_HAT_DOWN) action = joy_map(JOY_ASIX_YP);
+              if (event.jhat.value & SDL_HAT_LEFT) action = joy_map(JOY_ASIX_XM);
+              if (event.jhat.value & SDL_HAT_RIGHT) action = joy_map(JOY_ASIX_XP);
+			  }
         default:
            break;
      }
@@ -998,9 +1004,35 @@ u32 update_input()
                newkey &= ~(joy_map(JOY_ASIX_YM));
                newkey &= ~(joy_map(JOY_ASIX_YP));
             }
-         }
+         }        
       break;
       }
+
+      case SDL_JOYHATMOTION:
+      {	
+			      if (event.jhat.value & SDL_HAT_UP)  {
+               newkey |= joy_map(JOY_ASIX_YM);
+               newkey &= ~(joy_map(JOY_ASIX_YP));
+            } else if (event.jhat.value & SDL_HAT_DOWN) {
+			         newkey &= ~(joy_map(JOY_ASIX_YM));
+               newkey |= joy_map(JOY_ASIX_YP);
+            } else {
+               newkey &= ~(joy_map(JOY_ASIX_YM));
+               newkey &= ~(joy_map(JOY_ASIX_YP));
+            }
+			
+			      if (event.jhat.value & SDL_HAT_LEFT) {
+               newkey |= joy_map(JOY_ASIX_XM);
+               newkey &= ~(joy_map(JOY_ASIX_XP));
+            } else if (event.jhat.value & SDL_HAT_RIGHT) {
+               newkey &= ~(joy_map(JOY_ASIX_XM));
+               newkey |= joy_map(JOY_ASIX_XP);
+            } else {
+               newkey &= ~(joy_map(JOY_ASIX_XM));
+               newkey &= ~(joy_map(JOY_ASIX_XP));
+            }
+      break;
+      }        
     }
   }
 
